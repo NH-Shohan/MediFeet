@@ -4,14 +4,14 @@ import Link from "next/link";
 export default function Footer() {
   return (
     <div className="shadow pt-16">
-      <div className="px-[10%] grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-4 gap-3">
-        <div className="w-[300px]">
+      <div className="md:px-[10%] md:grid sm:text-center md:text-left sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-4 xl:grid-cols-4 gap-3">
+        <div className="md:w-[300px] sm:mx-auto md:mx-0">
           <Link href="/">
-            <div>
-              <Image src="/logo.png" alt="Logo" width="220" height="65" />
+            <div className="sm:w-fit sm:mx-auto md:mx-0">
+              <Image src="/logo.png" alt="Logo" width="200" height="65" />
             </div>
           </Link>
-          <div className="my-6 flex">
+          <div className="my-6 flex sm:w-fit sm:mx-auto md:mx-0">
             <Link href={"#"}>
               <Image
                 className="mr-5"
@@ -19,7 +19,7 @@ export default function Footer() {
                 alt="Logo"
                 width={"30"}
                 height={"100"}
-              />{" "}
+              />
             </Link>
             <Link href={"#"}>
               <Image
@@ -56,8 +56,8 @@ export default function Footer() {
         </div>
 
         {/* Contact */}
-        <div>
-          <h1 className="font-bold text-secondary text-xl uppercase mb-5">
+        <div className="sm:mx-auto ">
+          <h1 className="font-bold sm:mt-4 md:mt-0 text-secondary text-xl uppercase mb-5">
             Contact
           </h1>
           <p className="mb-4">+(65) 9182 1172</p>
@@ -66,7 +66,7 @@ export default function Footer() {
 
         {/* Quick Link */}
         <div className="flex flex-col leading-7">
-          <h1 className="font-bold text-secondary text-xl uppercase mb-5">
+          <h1 className="font-bold sm:mt-4 md:mt-0 text-secondary text-xl uppercase mb-5">
             Quick Link
           </h1>
           <Link href={"#"}>Home</Link>
@@ -74,14 +74,14 @@ export default function Footer() {
           <Link href={"#"}>Men</Link>
           <Link href={"#"}>Assessories</Link>
           <Link href={"#"}>Outlets</Link>
-          <Link href={"#"}>Contact Us</Link>
+          <Link href={"/contactus"}>Contact Us</Link>
           <Link href={"#"}>About Us</Link>
           <Link href={"#"}>Clientele</Link>
         </div>
 
         {/* Info */}
         <div className="flex flex-col leading-7">
-          <h1 className="font-bold text-secondary text-xl uppercase mb-5">
+          <h1 className="font-bold sm:mt-4 md:mt-0 text-secondary text-xl uppercase mb-5">
             Info
           </h1>
           <Link href={"#"}>Terms & Conditions</Link>
@@ -91,25 +91,29 @@ export default function Footer() {
       </div>
 
       <div className="mx-[10%] border-primary border-2 rounded-xl p-5 my-5">
-        <h1 className="font-bold text-secondary text-xl uppercase mb-5">
+        <h1 className="font-bold sm:mt-4 md:mt-0 text-secondary text-xl uppercase mb-5">
           OutLets
         </h1>
         <div className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-4 gap-3">
           <div className="flex flex-col leading-7">
-            <h1 className="font-bold text-md uppercase">Medifeet @Metro:</h1>
+            <h1 className="font-bold sm:mt-4 md:mt-0 text-md uppercase">
+              Medifeet @Metro:
+            </h1>
             <p>
               1 Woodlands Square, level 2<br /> METRO, Causeway Point, <br />
               Singapore 738099
             </p>
           </div>
           <div className="flex flex-col leading-7">
-            <h1 className="font-bold text-md uppercase">Medifeet @Novena:</h1>
+            <h1 className="font-bold sm:mt-4 md:mt-0 text-md uppercase">
+              Medifeet @Novena:
+            </h1>
             <p>
               10 Sinaran Drive Novena Square 2, #03-114/115, Singapore 307506
             </p>
           </div>
           <div className="flex flex-col leading-7">
-            <h1 className="font-bold text-md uppercase">
+            <h1 className="font-bold sm:mt-4 md:mt-0 text-md uppercase">
               Medifeet @Northview:
             </h1>
             <p>
@@ -118,7 +122,7 @@ export default function Footer() {
             </p>
           </div>
           <div className="flex flex-col leading-7">
-            <h1 className="font-bold text-md uppercase">
+            <h1 className="font-bold sm:mt-4 md:mt-0 text-md uppercase">
               Medifeet @Tangs Orchard:
             </h1>
             <p>310 Orchard Rd, Tang Plaza, Singapore 238864</p>

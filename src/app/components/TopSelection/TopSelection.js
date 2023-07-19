@@ -19,6 +19,9 @@ export default function TopSelection() {
           disableOnInteraction: false,
         }}
         breakpoints={{
+          0: {
+            slidesPerView: 2,
+          },
           640: {
             slidesPerView: 2,
           },
@@ -35,7 +38,7 @@ export default function TopSelection() {
         // onSwiper={(swiper) => console.log(swiper)}
       >
         <SwiperSlide className="flex justify-center">
-          <div className="group w-fit p-4 text-center relative">
+          <div className="group w-fit mx-auto p-4 text-center relative">
             <div className="absolute right-4 opacity-0 transition-opacity duration-400 group-hover:opacity-100">
               <div className="shadow-md p-2 pt-3 flex justify-center items-center rounded-md cursor-pointer">
                 <svg
@@ -73,7 +76,7 @@ export default function TopSelection() {
               </div>
             </div>
             <Image
-              className="rounded-2xl"
+              className="rounded-2xl m-auto"
               src="/shoe1.png"
               width={250}
               height={100}
@@ -100,7 +103,7 @@ export default function TopSelection() {
           </div>
         </SwiperSlide>
         <SwiperSlide className="flex justify-center">
-          <div className="group w-fit p-4 text-center relative">
+          <div className="group w-fit mx-auto p-4 text-center relative">
             <div className="absolute right-4 opacity-0 transition-opacity duration-400 group-hover:opacity-100">
               <div className="shadow-md p-2 pt-3 flex justify-center items-center rounded-md cursor-pointer">
                 <svg
@@ -165,7 +168,7 @@ export default function TopSelection() {
           </div>
         </SwiperSlide>
         <SwiperSlide className="flex justify-center">
-          <div className="group w-fit p-4 text-center relative">
+          <div className="group w-fit mx-auto p-4 text-center relative">
             <div className="absolute right-4 opacity-0 transition-opacity duration-400 group-hover:opacity-100">
               <div className="shadow-md p-2 pt-3 flex justify-center items-center rounded-md cursor-pointer">
                 <svg
@@ -230,7 +233,7 @@ export default function TopSelection() {
           </div>
         </SwiperSlide>
         <SwiperSlide className="flex justify-center">
-          <div className="group w-fit p-4 text-center relative">
+          <div className="group w-fit mx-auto p-4 text-center relative">
             <div className="absolute right-4 opacity-0 transition-opacity duration-400 group-hover:opacity-100">
               <div className="shadow-md p-2 pt-3 flex justify-center items-center rounded-md cursor-pointer">
                 <svg
@@ -295,7 +298,7 @@ export default function TopSelection() {
           </div>
         </SwiperSlide>
         <SwiperSlide className="flex justify-center">
-          <div className="group w-fit p-4 text-center relative">
+          <div className="group w-fit mx-auto p-4 text-center relative">
             <div className="absolute right-4 opacity-0 transition-opacity duration-400 group-hover:opacity-100">
               <div className="shadow-md p-2 pt-3 flex justify-center items-center rounded-md cursor-pointer">
                 <svg

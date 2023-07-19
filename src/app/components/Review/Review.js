@@ -2,9 +2,8 @@ import Image from "next/image";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
-import { Autoplay, Keyboard, Navigation } from "swiper/modules";
+import { Autoplay, Keyboard, Pagination } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
-import "../../globals.css";
 
 export default function Review() {
   return (
@@ -12,8 +11,10 @@ export default function Review() {
       <Swiper
         // spaceBetween={50}
         slidesPerView={"auto"}
-        navigation={true}
         keyboard={true}
+        pagination={{
+          clickable: true,
+        }}
         autoplay={{
           delay: 2200,
           disableOnInteraction: false,
@@ -23,19 +24,19 @@ export default function Review() {
             slidesPerView: 2,
           },
           768: {
-            slidesPerView: 3,
+            slidesPerView: 2,
           },
           1024: {
             slidesPerView: 4,
           },
         }}
-        modules={[Navigation, Keyboard, Autoplay]}
+        modules={[Pagination, Keyboard, Autoplay]}
 
         // onSlideChange={() => console.log("slide change")}
         // onSwiper={(swiper) => console.log(swiper)}
       >
-        <SwiperSlide className="flex slider justify-center items-center">
-          <div className="w-[300px] my-[30px] shadow p-7 rounded-lg flex flex-col justify-between">
+        <SwiperSlide className="flex slider justify-center items-center gap-10">
+          <div className="w-[300px] my-[30px] mx-auto shadow p-7 rounded-lg flex flex-col justify-between">
             <p className="overflow-hidden text-ellipsis h-[350px]">
               I came across Medifeet last year and loved that their shoes were
               comfortable yet affordable. This year, I was looking for a pair of
@@ -105,7 +106,7 @@ export default function Review() {
           </div>
         </SwiperSlide>
         <SwiperSlide className="flex slider justify-center items-center">
-          <div className="w-[300px] my-[30px] shadow p-7 rounded-lg flex flex-col justify-between">
+          <div className="w-[300px] my-[30px] mx-auto shadow p-7 rounded-lg flex flex-col justify-between">
             <p className="overflow-hidden text-ellipsis h-[350px]">
               I came across Medifeet last year and loved that their shoes were
               comfortable yet affordable. This year, I was looking for a pair of
@@ -175,7 +176,7 @@ export default function Review() {
           </div>
         </SwiperSlide>
         <SwiperSlide className="flex slider justify-center items-center">
-          <div className="w-[300px] my-[30px] shadow p-7 rounded-lg flex flex-col justify-between">
+          <div className="w-[300px] my-[30px] mx-auto shadow p-7 rounded-lg flex flex-col justify-between">
             <p className="overflow-hidden text-ellipsis h-[350px]">
               I came across Medifeet last year and loved that their shoes were
               comfortable yet affordable. This year, I was looking for a pair of
@@ -245,7 +246,7 @@ export default function Review() {
           </div>
         </SwiperSlide>
         <SwiperSlide className="flex slider justify-center items-center">
-          <div className="w-[300px] my-[30px] shadow p-7 rounded-lg flex flex-col justify-between">
+          <div className="w-[300px] my-[30px] mx-auto shadow p-7 rounded-lg flex flex-col justify-between">
             <p className="overflow-hidden text-ellipsis h-[350px]">
               I came across Medifeet last year and loved that their shoes were
               comfortable yet affordable. This year, I was looking for a pair of
@@ -315,7 +316,7 @@ export default function Review() {
           </div>
         </SwiperSlide>
         <SwiperSlide className="flex slider justify-center items-center">
-          <div className="w-[300px] my-[30px] shadow p-7 rounded-lg flex flex-col justify-between">
+          <div className="w-[300px] my-[30px] mx-auto shadow p-7 rounded-lg flex flex-col justify-between">
             <p className="overflow-hidden text-ellipsis h-[350px]">
               I came across Medifeet last year and loved that their shoes were
               comfortable yet affordable. This year, I was looking for a pair of
@@ -385,7 +386,7 @@ export default function Review() {
           </div>
         </SwiperSlide>
         <SwiperSlide className="flex slider justify-center items-center">
-          <div className="w-[300px] my-[30px] shadow p-7 rounded-lg flex flex-col justify-between">
+          <div className="w-[300px] my-[30px] mx-auto shadow p-7 rounded-lg flex flex-col justify-between">
             <p className="overflow-hidden text-ellipsis h-[350px]">
               I came across Medifeet last year and loved that their shoes were
               comfortable yet affordable. This year, I was looking for a pair of
@@ -455,7 +456,7 @@ export default function Review() {
           </div>
         </SwiperSlide>
         <SwiperSlide className="flex slider justify-center items-center">
-          <div className="w-[300px] my-[30px] shadow-lg shadow-[#e0e0e0] p-7 rounded-lg flex flex-col justify-between">
+          <div className="w-[300px] my-[30px] mx-auto shadow-lg shadow-[#e0e0e0] p-7 rounded-lg flex flex-col justify-between">
             <p className="overflow-hidden text-ellipsis h-[350px]">
               I came across Medifeet last year and loved that their shoes were
               comfortable yet affordable. This year, I was looking for a pair of

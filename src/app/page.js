@@ -1,4 +1,5 @@
 "use client";
+
 import HeroSection from "./components/Hero/Hero";
 import MallAddress from "./components/MallAddress/MallAddress";
 import NearestOutlet from "./components/NearestOutlet/NearestOutlet";
@@ -6,18 +7,13 @@ import PhoneMail from "./components/PhoneMail/PhoneMail";
 import Review from "./components/Review/Review";
 import InnovativeTechnologies from "./components/Technologies/Technologies";
 import TopSelection from "./components/TopSelection/TopSelection";
-import "./globals.css";
 
 export default function Home() {
   return (
     <main>
-      <section className="h-[80vha] flex items-center gap-7 md:px-[10%]">
+      <section className="h-[80vha] flex items-center gap-7 md:px-[10%] sm:px-5 my-12">
         <HeroSection />
       </section>
-
-      <div className="bg-[#91F488] rotate-[-90deg] translate-x-[38px] py-2 px-4 absolute right-0 top-[50%] rounded-t-xl font-bold">
-        <p>WHATSAPP</p>
-      </div>
 
       {/* Shwipper top selections */}
       <section className="h-[60vh] px-[10%]">
@@ -28,11 +24,11 @@ export default function Home() {
       </section>
 
       {/* Image selections */}
-      <section className="h-[60vh] px-[10%]">
+      <section className="mb-20 px-[10%]">
         <h1 className="text-3xl font-extrabold text-secondary uppercase text-center mb-9">
           Accreditations <span className="font-normal"></span>
         </h1>
-        <div className="flex justify-between text-white">
+        <div className="md:flex justify-between text-white">
           <div className="bg-primary w-96 h-96">A</div>
           <div className="bg-secondary w-96 h-96">B</div>
           <div className="bg-text w-96 h-96">C</div>
@@ -61,7 +57,7 @@ export default function Home() {
       </section>
 
       {/* Nearest outlet */}
-      <section className="h-auto shadow-xl rounded-xl mx-[10%] my-14 p-10 ">
+      <section className="h-auto shadow rounded-xl mx-[10%] my-14 p-10 ">
         <h1 className="text-3xl font-extrabold text-secondary uppercase text-center mb-9">
           WE ARE <span className="font-normal"> HERE</span>
         </h1>
