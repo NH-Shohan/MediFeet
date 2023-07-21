@@ -1,3 +1,6 @@
+import NearestOutlet from "../components/NearestOutlet/NearestOutlet";
+import PhoneMail from "../components/PhoneMail/PhoneMail";
+
 export default function page() {
   return (
     <div>
@@ -7,7 +10,7 @@ export default function page() {
         </p>
       </div>
 
-      <div className="flex justify-center">
+      <div className="flex justify-center mb-10">
         <form className="w-1/3">
           <div class="grid md:grid-cols-2 md:gap-6">
             <div class="relative z-0 w-full mb-6 group">
@@ -84,13 +87,13 @@ export default function page() {
                 type="text"
                 name="floating_company"
                 id="floating_company"
-                class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-secondary peer"
+                class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-secondary peer"
                 placeholder=" "
                 required
               />
               <label
                 for="floating_company"
-                class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-secondary peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
+                class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-secondary  peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
               >
                 Company
               </label>
@@ -103,30 +106,17 @@ export default function page() {
               name="floating_company"
               id="message"
               rows="4"
-              class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-secondary peer"
+              class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-secondary peer"
               placeholder=" "
               required
             ></textarea>
             <label
               for="floating_company"
-              class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-secondary peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
+              class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-secondary  peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
             >
-              Company
+              Message
             </label>
           </div>
-          <label
-            for="message"
-            class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
-          >
-            Leave a comment...
-          </label>
-
-          <textarea
-            id="message"
-            rows="4"
-            class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:border-secondary"
-            placeholder="Leave a comment..."
-          ></textarea>
 
           <button
             type="submit"
@@ -136,6 +126,14 @@ export default function page() {
           </button>
         </form>
       </div>
+
+      <section className="mx-[10%]">
+        <NearestOutlet />
+      </section>
+
+      <section className="mx-[10%]">
+        <PhoneMail />
+      </section>
     </div>
   );
 }

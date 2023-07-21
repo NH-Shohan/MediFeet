@@ -74,9 +74,9 @@ export default function Footer() {
           <Link href={"#"}>Men</Link>
           <Link href={"#"}>Assessories</Link>
           <Link href={"#"}>Outlets</Link>
-          <Link href={"/contactus"}>Contact Us</Link>
-          <Link href={"#"}>About Us</Link>
-          <Link href={"#"}>Clientele</Link>
+          <Link href={"/contactUs"}>Contact Us</Link>
+          <Link href={"/aboutUs"}>About Us</Link>
+          <Link href={"/clientele"}>Clientele</Link>
         </div>
 
         {/* Info */}
