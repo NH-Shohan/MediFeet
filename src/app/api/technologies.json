@@ -1,56 +1,56 @@
 [
   {
     "id": 1,
-    "image": "/public/shoe1.png",
+    "image": "/shoe1.png",
     "name": "Orthotic System",
     "description": "Best Comfort with Arch Support",
     "list": "Enhanced arch support for improved foot alignment and stability Relief for common foot conditions such as plantar fasciitis, flat feet, arch pain, heel pain, diabetes, and arthritis, etc."
   },
   {
     "id": 2,
-    "image": "/public/shoe2.png",
+    "image": "/shoe2.png",
     "name": "3 Point Support",
     "description": "Comprehensive Stability and Cushioning",
     "list": "Comprehensive foot support for the heel, arch, and forefoot Specialized metatarsal support alleviating forefoot pain Dedicated arch support for conditions such as plantar fasciitis and flat feet Effective heel support addressing pronation issues"
   },
   {
     "id": 3,
-    "image": "/public/shoe3.png",
+    "image": "/shoe3.png",
     "name": "Anti-Shock",
     "description": "Most Comfortable Impact Absorption",
     "list": "Maximum shock-absorbing material for the protection of your joints and muscles Impact reduction minimizing the stress and strain on your feet Reduced foot fatigue for long periods of walking or standing Joint, ligament and bone protection due to cushioning and reduced pressure"
   },
   {
     "id": 4,
-    "image": "/public/shoe4.png",
+    "image": "/shoe4.png",
     "name": "Rebounce Technology",
     "description": "Ultimate Comfortable All-Day Wear",
     "list": "Multi-layered cushioning for an overall softer and comfortable feel Dedicated arch support for conditions such as flat feet and plantar fasciitis Enhanced comfort at key pressure points"
   },
   {
     "id": 5,
-    "image": "/public/shoe5.png",
+    "image": "/shoe5.png",
     "name": "Rocking Svago",
     "description": "Effortless Relief for Spine Backache",
     "list": "Recommended by doctors for spine or back discomfort Triple-sole cushioning for exceptional heel support Maximum shock absorption protecting your joints and muscles Rocking sole with directional grooves for an effortless walking experience"
   },
   {
     "id": 6,
-    "image": "/public/shoe6.png",
+    "image": "/shoe6.png",
     "name": "SPINE GUARD SUPPORT",
     "description": "Stability and Correction For Alignment",
     "list": "U-shaped heel cup for stability and posture correction Comprehensive 3 point support for heel, arch and forefoot All rounded arch support for optimal foot health and overall comfort"
   },
   {
     "id": 7,
-    "image": "/public/shoe7.png",
+    "image": "/shoe7.png",
     "name": "FOOT BED TECHNOLOGY",
     "description": "Customized Comfort For Every Step",
     "list": "Exceptional 5 point support for key points including metatarsal support, arch support, external arch support, heel support, and enhanced toe grip Reduction of knee and hip pain from minimized stress during walking Posture correction and alignment for a more natural and efficient walking motion Unique footbed sole design encompassing a wide surface area that enhances stability and balance"
   },
   {
     "id": 8,
-    "image": "/public/shoe8.png",
+    "image": "/shoe8.png",
     "name": "Bunion CORRECTOR",
     "description": "Targeted Support and Cushioning For Bunions",
     "list": "Provides effective relief for vulgas discomfort by preventing skin rubbing and irritation Promotes proper toe alignment for improved foot posture Alleviates pain associated with cyst of hallux and other bunion-related complications. Allows for improved mobility and comfort throughout the day"

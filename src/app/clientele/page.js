@@ -3,7 +3,7 @@ import Image from "next/image";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
-import { Autoplay, Keyboard, Navigation } from "swiper/modules";
+import { Autoplay, Keyboard, Navigation, Pagination } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 import about2 from "../../../public/about2.png";
 import shoe from "../../../public/shoe.png";
@@ -37,32 +37,57 @@ export default function page() {
       <section className="bg-primary px-[10%] py-10 text-white">
         <Swiper
           // spaceBetween={50}
-          slidesPerView={"auto"}
-          navigation={true}
+          slidesPerView={1}
+          pagination={true}
           keyboard={true}
           loop={true}
           autoplay={{
-            delay: 2200,
+            delay: 1500,
             disableOnInteraction: false,
           }}
-          breakpoints={{
-            640: {
-              slidesPerView: 1,
-            },
-            768: {
-              slidesPerView: 2,
-            },
-            1024: {
-              slidesPerView: 3,
-            },
-          }}
-          modules={[Navigation, Keyboard, Autoplay]}
+          modules={[Pagination, Keyboard, Autoplay]}
 
           // onSlideChange={() => console.log("slide change")}
           // onSwiper={(swiper) => console.log(swiper)}
         >
           <SwiperSlide className="flex slider justify-center items-center gap-10 w-[700px]">
-            <div className="grid md:grid-cols-2 gap-10 my-16">
+            <div className="grid md:grid-cols-2 gap-10 my-16 p-3">
+              <Image src={about2} alt="about image" className="w-full" />
+              <div className="flex flex-col justify-center">
+                <p className="mb-10 text-lg font-light">
+                  At Medifeet Singapore, we understand the demands and
+                  challenges faced by professionals in high-intensity fields
+                  such as nursing. Long hours on your feet, constant movement,
+                  and the need for exceptional comfort are all essential factors
+                  when it comes to choosing the right footwear. That is why our
+                  shoes have become the go-to choice for professionals who
+                  prioritize both style and comfort.
+                </p>
+                <h1 className="text-2xl uppercase mb-2">Liza Lorem Ipsum</h1>
+                <p>Chief Nurse Executive, Lorem Ipsum Hospital</p>
+              </div>
+            </div>
+          </SwiperSlide>
+          <SwiperSlide className="flex slider justify-center items-center gap-10 w-[700px]">
+            <div className="grid md:grid-cols-2 gap-10 my-16 p-3">
+              <Image src={about2} alt="about image" className="w-full" />
+              <div className="flex flex-col justify-center">
+                <p className="mb-10 text-lg font-light">
+                  At Medifeet Singapore, we understand the demands and
+                  challenges faced by professionals in high-intensity fields
+                  such as nursing. Long hours on your feet, constant movement,
+                  and the need for exceptional comfort are all essential factors
+                  when it comes to choosing the right footwear. That is why our
+                  shoes have become the go-to choice for professionals who
+                  prioritize both style and comfort.
+                </p>
+                <h1 className="text-2xl uppercase mb-2">Liza Lorem Ipsum</h1>
+                <p>Chief Nurse Executive, Lorem Ipsum Hospital</p>
+              </div>
+            </div>
+          </SwiperSlide>
+          <SwiperSlide className="flex slider justify-center items-center gap-10 w-[700px]">
+            <div className="grid md:grid-cols-2 gap-10 my-16 p-3">
               <Image src={about2} alt="about image" className="w-full" />
               <div className="flex flex-col justify-center">
                 <p className="mb-10 text-lg font-light">

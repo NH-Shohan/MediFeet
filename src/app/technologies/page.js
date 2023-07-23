@@ -1,6 +1,11 @@
-import Image from "next/image";
+import data from "../api/technologies";
+import TechCard from "../components/Technologies/TechCard";
 
 export default function Technologies() {
+  // {
+  //   data.map((item) => console.log(item.id));
+  // }
+  console.log(data);
   return (
     <div className="px-[10%]">
       <div className="flex justify-start items-center my-10">
@@ -25,73 +30,16 @@ export default function Technologies() {
         </p>
       </div>
 
-      <div className="mb-10 grid md:grid-cols-2 lg:grid-cols-3 gap-7 justify-between">
-        <div className="border p-7 rounded-3xl">
-          <Image
-            className="w-full"
-            src="/tech1.png"
-            alt="Image"
-            width={400}
-            height={400}
-          />
-          <p className="text-3xl text-secondary uppercase my-5">
-            Orthotic System
-          </p>
-          <p className="mb-5">Best Comfort with Arch Support</p>
-          <ul className="list-disc ml-5">
-            <li>
-              Enhanced arch support for improved foot alignment and stability.
-            </li>
-            <li>
-              Relief for common foot conditions such as plantar fasciitis, flat
-              feet, arch pain, heel pain, diabetes, and arthritis, etc.
-            </li>
-          </ul>
-        </div>
-        <div className="border p-7 rounded-3xl">
-          <Image
-            className="w-full"
-            src="/tech1.png"
-            alt="Image"
-            width={400}
-            height={400}
-          />
-          <p className="text-3xl text-secondary uppercase my-5">
-            Orthotic System
-          </p>
-          <p className="mb-5">Best Comfort with Arch Support</p>
-          <ul className="list-disc ml-5">
-            <li>
-              Enhanced arch support for improved foot alignment and stability.
-            </li>
-            <li>
-              Relief for common foot conditions such as plantar fasciitis, flat
-              feet, arch pain, heel pain, diabetes, and arthritis, etc.
-            </li>
-          </ul>
-        </div>
-        <div className="border p-7 rounded-3xl">
-          <Image
-            className="w-full"
-            src="/tech1.png"
-            alt="Image"
-            width={400}
-            height={400}
-          />
-          <p className="text-3xl text-secondary uppercase my-5">
-            Orthotic System
-          </p>
-          <p className="mb-5">Best Comfort with Arch Support</p>
-          <ul className="list-disc ml-5">
-            <li>
-              Enhanced arch support for improved foot alignment and stability.
-            </li>
-            <li>
-              Relief for common foot conditions such as plantar fasciitis, flat
-              feet, arch pain, heel pain, diabetes, and arthritis, etc.
-            </li>
-          </ul>
-        </div>
+      <div>
+        {data.map((item, index) => {
+          <TechCard
+            image={item.image}
+            name={item.name}
+            description={item.description}
+            list={item.list}
+            key={index}
+          />;
+        })}
       </div>
     </div>
   );
