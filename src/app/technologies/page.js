@@ -2,10 +2,6 @@ import data from "../api/technologies";
 import TechCard from "../components/Technologies/TechCard";
 
 export default function Technologies() {
-  // {
-  //   data.map((item) => console.log(item.id));
-  // }
-  console.log(data);
   return (
     <div className="px-[10%]">
       <div className="flex justify-start items-center my-10">
@@ -30,16 +26,16 @@ export default function Technologies() {
         </p>
       </div>
 
-      <div>
-        {data.map((item, index) => {
+      <div className="mb-10 grid md:grid-cols-2 lg:grid-cols-3 gap-7 justify-between">
+        {data.map((item, index) => (
           <TechCard
             image={item.image}
             name={item.name}
             description={item.description}
             list={item.list}
             key={index}
-          />;
-        })}
+          />
+        ))}
       </div>
     </div>
   );

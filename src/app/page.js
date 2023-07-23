@@ -29,9 +29,9 @@ export default function Home() {
           Accreditations <span className="font-normal"></span>
         </h1>
         <div className="md:flex justify-between text-white">
-          <div className="bg-primary w-96 h-96">A</div>
-          <div className="bg-secondary w-96 h-96">B</div>
-          <div className="bg-text w-96 h-96">C</div>
+          <div className="bg-primary w-80 h-80">A</div>
+          <div className="bg-secondary w-80 h-80">B</div>
+          <div className="bg-text w-80 h-80">C</div>
         </div>
       </section>
 
