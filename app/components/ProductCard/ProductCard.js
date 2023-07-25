@@ -1,5 +1,5 @@
 import "flowbite";
-import data from "../../api/shoe.json";
+import data from "../../../data/shoe";
 import Card from "./Card";
 
 export default async function ProductCard({ className }) {

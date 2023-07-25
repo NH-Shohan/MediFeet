@@ -1,4 +1,4 @@
-import data from "../api/technologies";
+import data from "../../data/technologies";
 import TechCard from "../components/Technologies/TechCard";
 
 export default function Technologies() {
