@@ -1,8 +1,66 @@
-{
-  "name": "Beats Solo3 Wireless On-Ear Headphones",
-  "description": "The Beats Solo3 Wireless On-Ear Headphones are a premium set of headphones that feature Bluetooth connectivity, up to 40 hours of battery life, and on-ear controls for adjusting volume and switching tracks. They have a sleek, stylish design and come in a variety of colors. They also have a built-in microphone for taking calls and use the Apple W1 chip for easy and stable connectivity with Apple devices.",
-  "price": 199.95,
-  "seller": "Beats by Dr. Dre",
-  "stock": 500,
-  "category": "Headphones"
-}
+[
+  {
+    "name": "Beats Solo3 Wireless On-Ear Headphones",
+    "description": "The Beats Solo3 Wireless On-Ear Headphones are a premium set of headphones that feature Bluetooth connectivity, up to 40 hours of battery life, and on-ear controls for adjusting volume and switching tracks. They have a sleek, stylish design and come in a variety of colors. They also have a built-in microphone for taking calls and use the Apple W1 chip for easy and stable connectivity with Apple devices.",
+    "price": 199.95,
+    "seller": "Beats by Dr. Dre",
+    "stock": 500,
+    "category": "Arch Pain",
+    "images": [
+      {
+        "public_id": "shoe1_vxc7iw",
+        "uri": "https://res.cloudinary.com/dssq9ycet/image/upload/v1690561210/MediFeet/products/shoe1_vxc7iw.png"
+      }
+    ],
+    "reviews": [],
+    "ratings": 4.5
+  },
+  {
+    "name": "Solo3 Wireless On-Ear Headphones",
+    "description": "The Beats Solo3 Wireless On-Ear Headphones are a premium set of headphones that feature Bluetooth connectivity, up to 40 hours of battery life, and on-ear controls for adjusting volume and switching tracks. They have a sleek, stylish design and come in a variety of colors. They also have a built-in microphone for taking calls and use the Apple W1 chip for easy and stable connectivity with Apple devices.",
+    "price": 130,
+    "seller": "Beats by Dr. Dre",
+    "stock": 400,
+    "category": "Arthritis",
+    "images": [
+      {
+        "public_id": "shoe2_wvrdf0",
+        "uri": "https://res.cloudinary.com/dssq9ycet/image/upload/v1690561209/MediFeet/products/shoe2_wvrdf0.png"
+      }
+    ],
+    "reviews": [],
+    "ratings": 4
+  },
+  {
+    "name": "Wireless On-Ear Headphones",
+    "description": "The Beats Solo3 Wireless On-Ear Headphones are a premium set of headphones that feature Bluetooth connectivity, up to 40 hours of battery life, and on-ear controls for adjusting volume and switching tracks. They have a sleek, stylish design and come in a variety of colors. They also have a built-in microphone for taking calls and use the Apple W1 chip for easy and stable connectivity with Apple devices.",
+    "price": 326,
+    "seller": "Beats by Dr. Dre",
+    "stock": 500,
+    "category": "Back Discomfort",
+    "images": [
+      {
+        "public_id": "shoe2_vxc7iw",
+        "uri": "https://res.cloudinary.com/dssq9ycet/image/upload/v1690561210/MediFeet/products/shoe1_vxc7iw.png"
+      }
+    ],
+    "reviews": [],
+    "ratings": 5
+  },
+  {
+    "name": "On-Ear Headphones",
+    "description": "The Beats Solo3 Wireless On-Ear Headphones are a premium set of headphones that feature Bluetooth connectivity, up to 40 hours of battery life, and on-ear controls for adjusting volume and switching tracks. They have a sleek, stylish design and come in a variety of colors. They also have a built-in microphone for taking calls and use the Apple W1 chip for easy and stable connectivity with Apple devices.",
+    "price": 159,
+    "seller": "Beats by Dr. Dre",
+    "stock": 300,
+    "category": "Diabetes",
+    "images": [
+      {
+        "public_id": "shoe1_wvrdf0",
+        "uri": "https://res.cloudinary.com/dssq9ycet/image/upload/v1690561209/MediFeet/products/shoe2_wvrdf0.png"
+      }
+    ],
+    "reviews": [],
+    "ratings": 4.5
+  }
+]

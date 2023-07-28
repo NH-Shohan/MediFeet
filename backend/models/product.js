@@ -4,79 +4,71 @@ const productSchema = new mongoose.Schema(
   {
     name: {
       type: String,
-      // required: true,
     },
     description: {
       type: String,
-      // required: true,
     },
-    // price: {
-    //   type: Number,
-    //   // required: [true, "Please enter product price"],
-    // },
-    // images: [
-    //   {
-    //     public_id: {
-    //       type: String,
-    //     },
-    //     uri: {
-    //       type: String,
-    //     },
-    //   },
-    // ],
-    // category: {
-    //   type: String,
-    //   // required: [true, "Please enter product category"],
-    //   enum: {
-    //     values: [
-    //       "category1",
-    //       "category2",
-    //       "category3",
-    //       "category4",
-    //       "category5",
-    //       "category6",
-    //       "category7",
-    //     ],
-    //     message: "Please select correct category",
-    //   },
-    // },
-    // seller: {
-    //   type: String,
-    //   // required: [true, "Please enter product seller"],
-    // },
-    // stock: {
-    //   type: Number,
-    //   // required: [true, "Please enter product stock"],
-    // },
-    // ratings: {
-    //   type: Number,
-    //   default: 0,
-    // },
-    // review: [
-    //   {
-    //     rating: {
-    //       type: Number,
-    //       // required: true,
-    //     },
-    //     comment: {
-    //       type: String,
-    //       // required: true,
-    //     },
-    //     createdAt: {
-    //       type: Date,
-    //       default: Date.now,
-    //     },
-    //   },
-    // ],
-    // createdAt: {
-    //   type: Date,
-    //   default: Date.now,
-    // },
+    price: {
+      type: Number,
+    },
+    images: [
+      {
+        public_id: {
+          type: String,
+        },
+        uri: {
+          type: String,
+        },
+      },
+    ],
+    category: {
+      type: String,
+      enum: {
+        values: [
+          "Arch Pain",
+          "Arthritis",
+          "Back Discomfort",
+          "Diabetes",
+          "Forefoot Pain",
+          "Plantar Fasciitis",
+          "Spine Discomfort"
+        ],
+        message: "Please select correct category",
+      },
+    },
+    seller: {
+      type: String,
+    },
+    stock: {
+      type: Number,
+    },
+    ratings: {
+      type: Number,
+      default: 0,
+    },
+    review: [
+      {
+        rating: {
+          type: Number,
+        },
+        comment: {
+          type: String,
+        },
+        createdAt: {
+          type: Date,
+          default: Date.now,
+        },
+      },
+    ],
+    createdAt: {
+      type: Date,
+      default: Date.now,
+    },
   },
   {
     timestamps: true,
   }
 );
 
-export default mongoose.models.Product ||
-  mongoose.model("Product", productSchema);
+const productCollection = mongoose.models.productCollection || new mongoose.model("productCollection", productSchema);
+export default productCollection;

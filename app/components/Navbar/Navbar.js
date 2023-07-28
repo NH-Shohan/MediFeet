@@ -8,7 +8,7 @@ export const Navbar = () => {
   const [navbar, setNavbar] = useState(false);
   return (
     <>
-      <nav className="w-full backdrop-blur-[100px] sticky top-0 left-0 right-0 z-10 shadow-lg px-[10%]">
+      <nav className="w-full backdrop-blur-[100px] bg-white sticky top-0 left-0 right-0 z-10 shadow-lg px-[10%]">
         <div className="justify-between mx-auto md:items-center md:flex md:px-8">
           <div className="">
             <div className="flex items-center justify-between py-3 md:py-5 md:block">

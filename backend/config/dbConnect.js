@@ -9,6 +9,7 @@ if (!MONGODB_URL) {
 }
 
 let cached = global.mongoose;
+// console.log(global);
 
 if (!cached) {
   cached = global.mongoose = { con: null, promise: null };
