@@ -1,16 +1,29 @@
 import axios from "axios";
 import ListProducts from "../components/Products/ListProducts";
 
-const getProducts = async () => {
-  const {data} = await axios.get(`${process.env.API_URL}/api/products`);
-  return data;
-} 
+import queryString from "query-string";
 
-const Man = async () => {
-  const productsData = await getProducts()
-  return (
-    <ListProducts data={productsData}/>
+const getProducts = async (searchParams) => {
+  const urlParams = {
+    // keyword: searchParams.keyword,
+    page: searchParams.page,
+    category: searchParams.category,
+    "price[gte]": searchParams.min,
+    "price[lte]": searchParams.max,
+    "ratings[gte]": searchParams.ratings,
+  };
+
+  const searchQuery = queryString.stringify(urlParams);
+
+  const { data } = await axios.get(
+    `${process.env.API_URL}/api/products?${searchQuery}`
   );
-}
+  return data;
+};
+
+const Man = async ({ searchParams }) => {
+  const productsData = await getProducts(searchParams);
+  return <ListProducts data={productsData} />;
+};
 
 export default Man;

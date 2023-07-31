@@ -1,26 +1,40 @@
 "use client";
 
 import { Rating } from "@smastrom/react-rating";
+import "@smastrom/react-rating/style.css";
 import Image from "next/image";
-import { useRef } from "react";
-// import BreadCrumbs from "../layouts/BreadCrumbs";
+import { useContext, useRef } from "react";
+import CartContext from "../../context/CartContext";
 
 const ProductDetails = ({ product }) => {
+  const { addItemToCart } = useContext(CartContext);
   const imgRef = useRef(null);
 
-  const setImgPreview = (url) => {
-    imgRef.current.src = url;
+  const setImgPreview = (uri) => {
+    imgRef.current.src = uri;
+    console.log(imgRef.current);
   };
 
   const inStock = product?.stock >= 1;
 
-  const breadCrumbs = [
-    { name: "Home", url: "/" },
-    {
-      name: `${product?.name?.substring(0, 100)} ...`,
-      url: `/products/${product?._id}`,
-    },
-  ];
+  const addToCartHandler = () => {
+    addItemToCart({
+      product: product._id,
+      name: product.name,
+      price: product.price,
+      image: product.images[0].uri,
+      stock: product.stock,
+      seller: product.seller,
+    });
+  };
+
+  // const breadCrumbs = [
+  //   { name: "Home", uri: "/" },
+  //   {
+  //     name: `${product?.name?.substring(0, 100)} ...`,
+  //     uri: `/products/${product?._id}`,
+  //   },
+  // ];
   return (
     <>
       {/* <BreadCrumbs breadCrumbs={breadCrumbs} /> */}
@@ -46,12 +60,12 @@ const ProductDetails = ({ product }) => {
                 {product?.images?.map((img, index) => (
                   <div
                     key={index}
-                    className="inline-block border border-gray-200 p-1 rounded-md over:border-blue-500 cursor-pointer"
+                    className="inline-block border border-gray-200 p-1 rounded-md hover:border-blue-500 cursor-pointer"
                     onClick={() => setImgPreview(img?.uri)}
                   >
                     <Image
                       className="w-14 h-14"
-                      src={img.uri}
+                      src={img?.uri}
                       alt="Product title"
                       width="500"
                       height="500"
@@ -68,7 +82,7 @@ const ProductDetails = ({ product }) => {
                   <Rating
                     style={{ maxWidth: 100 }}
                     readOnly
-                    value={4}
+                    value={product.ratings}
                   />
                 </div>
                 <span className="text-yellow-500">{product?.ratings}</span>
@@ -90,7 +104,11 @@ const ProductDetails = ({ product }) => {
               <p className="mb-4 text-gray-500">{product?.description}</p>
 
               <div className="flex flex-wrap gap-2 mb-5">
-                <button className="px-4 py-2 inline-block text-white bg-blue-600 border border-transparent rounded-md hover:bg-blue-700">
+                <button
+                  className="px-4 py-2 inline-block text-white bg-blue-600 border border-transparent rounded-md hover:bg-blue-700"
+                  onClick={addToCartHandler}
+                  disabled={!inStock}
+                >
                   <i className="fa fa-shopping-cart mr-2"></i>
                   Add to cart
                 </button>
@@ -98,7 +116,6 @@ const ProductDetails = ({ product }) => {
 
               <ul className="mb-5">
                 <li className="mb-1">
-                  {" "}
                   <b className="font-medium w-36 inline-block">Stock</b>
                   {inStock ? (
                     <span className="text-green-500">In Stock</span>

@@ -28,3 +28,12 @@ body {
 .shadow {
   box-shadow: 0 0 20px 1px #ececec;
 }
+.custom-input-number {
+  border: none;
+  outline: none;
+  width: 60px;
+}
+.custom-input-number:focus {
+  outline: none;
+  border: none;
+}

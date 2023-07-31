@@ -31,7 +31,7 @@ const productSchema = new mongoose.Schema(
           "Diabetes",
           "Forefoot Pain",
           "Plantar Fasciitis",
-          "Spine Discomfort"
+          "Spine Discomfort",
         ],
         message: "Please select correct category",
       },
@@ -70,5 +70,7 @@ const productSchema = new mongoose.Schema(
   }
 );
 
-const productCollection = mongoose.models.productCollection || new mongoose.model("productCollection", productSchema);
+const productCollection =
+  mongoose.models.productCollection ||
+  new mongoose.model("productCollection", productSchema);
 export default productCollection;

@@ -7,9 +7,27 @@ export async function POST(req) {
   try {
     const body = await req.json();
     await dbConnect();
-    const { name, description, price, category, seller, stock, ratings, images, review } = body;
+    const {
+      name,
+      description,
+      price,
+      category,
+      seller,
+      stock,
+      ratings,
+      images,
+      review,
+    } = body;
     const product = await Product.create({
-      name, description, price, category, seller, stock, ratings, images, review
+      name,
+      description,
+      price,
+      category,
+      seller,
+      stock,
+      ratings,
+      images,
+      review,
     });
     product.save();
     return NextResponse.json(
@@ -35,9 +53,10 @@ export async function POST(req) {
   }
 }
 
-export async function GET() {
+export async function GET(req) {
   try {
     await dbConnect();
+
     const product = await Product.find({});
     return NextResponse.json(
       {

@@ -1,17 +1,61 @@
 "use client";
 
-import { Rating } from '@smastrom/react-rating';
-import '@smastrom/react-rating/style.css';
+import { Rating } from "@smastrom/react-rating";
+import "@smastrom/react-rating/style.css";
+import { useRouter } from "next/navigation";
+import { useState } from "react";
+import { getPriceQueryParams } from "../../helpers/helpers";
 
 const Filters = () => {
+  const [min, setMin] = useState("");
+  const [max, setMax] = useState("");
+
+  const router = useRouter();
+
   let queryParams;
 
-  function checkHandler(checkBoxType, checkBoxValue) {
+  function handleClick(checkbox) {
     if (typeof window !== "undefined") {
       queryParams = new URLSearchParams(window.location.search);
     }
 
+    const checkboxes = document.getElementsByName(checkbox.name);
+
+    checkboxes.forEach((item) => {
+      if (item !== checkbox) item.checked = false;
+    });
+
+    if (checkbox.checked === false) {
+      // Delete the filter from query
+      queryParams.delete(checkbox.name);
+    } else {
+      // Set filter in the query
+      if (queryParams.has(checkbox.name)) {
+        queryParams.set(checkbox.name, checkbox.value);
+      } else {
+        queryParams.append(checkbox.name, checkbox.value);
+      }
+    }
+    const path = window.location.pathname + "?" + queryParams.toString();
+    router.push(path);
+  }
+
+  function handleButtonClick() {
     if (typeof window !== "undefined") {
+      queryParams = new URLSearchParams(window.location.search);
+
+      queryParams = getPriceQueryParams(queryParams, "min", min);
+      queryParams = getPriceQueryParams(queryParams, "max", max);
+
+      const path = window.location.pathname + "?" + queryParams.toString();
+      router.push(path);
+    }
+  }
+
+  function checkHandler(checkBoxType, checkBoxValue) {
+    if (typeof window !== "undefined") {
+      queryParams = new URLSearchParams(window.location.search);
+
       const value = queryParams.get(checkBoxType);
       if (checkBoxValue === value) return true;
       return false;
@@ -35,6 +79,8 @@ const Filters = () => {
               className="appearance-none border border-gray-200 bg-gray-100 rounded-md py-2 px-3 hover:border-gray-400 focus:outline-none focus:border-gray-400 w-full"
               type="number"
               placeholder="Min"
+              value={min}
+              onChange={(e) => setMin(e.target.value)}
             />
           </div>
 
@@ -44,11 +90,16 @@ const Filters = () => {
               className="appearance-none border border-gray-200 bg-gray-100 rounded-md py-2 px-3 hover:border-gray-400 focus:outline-none focus:border-gray-400 w-full"
               type="number"
               placeholder="Max"
+              value={max}
+              onChange={(e) => setMax(e.target.value)}
             />
           </div>
 
           <div className="mb-4">
-            <button className="px-1 py-2 text-center w-full inline-block text-white bg-blue-600 border border-transparent rounded-md hover:bg-blue-700">
+            <button
+              className="px-1 py-2 text-center w-full inline-block text-white bg-blue-600 border border-transparent rounded-md hover:bg-blue-700"
+              onClick={handleButtonClick}
+            >
               Go
             </button>
           </div>
@@ -64,11 +115,12 @@ const Filters = () => {
               <input
                 name="category"
                 type="checkbox"
-                value="Electronics"
+                value="Arch Pain"
                 className="h-4 w-4"
-                defaultChecked={checkHandler("category", "Electronics")}
+                defaultChecked={checkHandler("category", "Arch Pain")}
+                onClick={(e) => handleClick(e.target)}
               />
-              <span className="ml-2 text-gray-500"> Electronics </span>
+              <span className="ml-2 text-gray-500"> Arch Pain </span>
             </label>
           </li>
           <li>
@@ -76,11 +128,12 @@ const Filters = () => {
               <input
                 name="category"
                 type="checkbox"
-                value="Laptops"
+                value="Arthritis"
                 className="h-4 w-4"
-                defaultChecked={checkHandler("category", "Laptops")}
+                defaultChecked={checkHandler("category", "Arthritis")}
+                onClick={(e) => handleClick(e.target)}
               />
-              <span className="ml-2 text-gray-500"> Laptops </span>
+              <span className="ml-2 text-gray-500"> Arthritis </span>
             </label>
           </li>
           <li>
@@ -88,11 +141,12 @@ const Filters = () => {
               <input
                 name="category"
                 type="checkbox"
-                value="Toys"
+                value="Back Discomfort"
                 className="h-4 w-4"
-                defaultChecked={checkHandler("category", "Toys")}
+                defaultChecked={checkHandler("category", "Back Discomfort")}
+                onClick={(e) => handleClick(e.target)}
               />
-              <span className="ml-2 text-gray-500"> Toys </span>
+              <span className="ml-2 text-gray-500"> Back Discomfort </span>
             </label>
           </li>
           <li>
@@ -100,11 +154,12 @@ const Filters = () => {
               <input
                 name="category"
                 type="checkbox"
-                value="Office"
+                value="Diabetes"
                 className="h-4 w-4"
-                defaultChecked={checkHandler("category", "Office")}
+                defaultChecked={checkHandler("category", "Diabetes")}
+                onClick={(e) => handleClick(e.target)}
               />
-              <span className="ml-2 text-gray-500"> Office </span>
+              <span className="ml-2 text-gray-500"> Diabetes </span>
             </label>
           </li>
           <li>
@@ -115,6 +170,7 @@ const Filters = () => {
                 value="Beauty"
                 className="h-4 w-4"
                 defaultChecked={checkHandler("category", "Beauty")}
+                onClick={(e) => handleClick(e.target)}
               />
               <span className="ml-2 text-gray-500"> Beauty </span>
             </label>
@@ -134,13 +190,10 @@ const Filters = () => {
                   value={rating}
                   className="h-4 w-4"
                   defaultChecked={checkHandler("ratings", `${rating}`)}
+                  onClick={(e) => handleClick(e.target)}
                 />
                 <span className="ml-2 text-gray-500">
-                <Rating
-                    style={{ maxWidth: 100 }}
-                    value={rating}
-                    readOnly
-                    />
+                  <Rating style={{ maxWidth: 100 }} value={rating} readOnly />
                 </span>
               </label>
             ))}
