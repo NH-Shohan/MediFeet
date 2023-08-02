@@ -2,12 +2,21 @@
 import { useSession } from "next-auth/react";
 import Image from "next/image";
 import Link from "next/link";
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
+import AuthContext from "../../context/AuthContext";
 import CartContext from "../../context/CartContext";
 
 export const Navbar = () => {
-  const { cart } = useContext(CartContext);
+  const { user, setUser } = useContext(AuthContext);
   const { data } = useSession();
+
+  useEffect(() => {
+    if (data) {
+      setUser(data?.user);
+    }
+  }, [data, setUser]);
+
+  const { cart } = useContext(CartContext);
   const [navbar, setNavbar] = useState(false);
 
   return (
@@ -147,26 +156,41 @@ export const Navbar = () => {
                     ) : null}
                   </Link>
 
-                  <Link href={"/login"}>
-                    <button
-                      className={`px-6 py-2 rounded-full text-lg lg:text-[16px] text-background bg-secondary`}
-                      type="button"
-                    >
-                      Log In / Register
-                    </button>
-                  </Link>
+                  {!user ? (
+                    <Link href={"/login"}>
+                      <button
+                        className={`px-6 py-2 rounded-full text-lg lg:text-[16px] text-background bg-secondary`}
+                        type="button"
+                      >
+                        Log In / Register
+                      </button>
+                    </Link>
+                  ) : (
+                    <Link href={"/me"}>
+                      <div className="flex items-center gap-2 ml-4 cursor-pointer">
+                        <Image
+                          className="w-10 h-10 rounded-full border-primary border-2"
+                          width={25}
+                          height={25}
+                          alt="Avater"
+                          src={
+                            user?.avatar
+                              ? user?.avatar?.url
+                              : "/default_image.jpg"
+                          }
+                        />
+                        <div className="space-y-1 font-medium">
+                          <p>
+                            {user?.name}
+                            <time className="block text-sm text-gray-500 dark:text-gray-400">
+                              {user?.email}
+                            </time>
+                          </p>
+                        </div>
+                      </div>
+                    </Link>
+                  )}
                 </div>
-
-                <Link href={"/me"}>
-                  <div className="space-y-1 font-medium ml-4">
-                    <p>
-                      {data?.user?.name}
-                      <time className="block text-sm text-gray-500 dark:text-gray-400">
-                        {data?.user?.email}
-                      </time>
-                    </p>
-                  </div>
-                </Link>
               </ul>
             </div>
           </div>

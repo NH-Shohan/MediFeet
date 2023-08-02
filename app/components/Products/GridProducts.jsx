@@ -40,7 +40,7 @@ const GridProducts = ({ product }) => {
             />
           </div>
         </div>
-        <div className="px-4">
+        <div className="">
           <Link
             href={`/product/${product._id}`}
             className="hover:text-blue-600"
@@ -63,12 +63,12 @@ const GridProducts = ({ product }) => {
             <p className="ml-1 text-yellow-500 text-sm">{product?.ratings}</p>
           </div>
         </div>
-        <div className="px-4">
+        <div className="">
           <span className="text-lg font-semibold text-black">
             $ {product?.price}
           </span>
 
-          <div className="mb-3 w-[87%] absolute bottom-0">
+          <div className="mb-3 w-[93%] absolute bottom-0">
             <Button
               className={"w-full rounded-lg"}
               onclick={addToCartHandler}

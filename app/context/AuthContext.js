@@ -9,7 +9,7 @@ const AuthContext = createContext();
 export const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
   const [error, setError] = useState(null);
-  console.log(user);
+  const [updated, setUpdated] = useState(false);
 
   const router = useRouter();
 
@@ -29,6 +29,51 @@ export const AuthProvider = ({ children }) => {
     }
   };
 
+  const addNewAddress = async (address) => {
+    try {
+      const { data } = await axios.post(
+        `http://localhost:3000/api/address`,
+        address
+      );
+
+      if (data) {
+        router.push("/me");
+      }
+    } catch (error) {
+      setError(error?.response?.data?.message);
+    }
+  };
+
+  const updateAddress = async (id, address) => {
+    try {
+      const { data } = await axios.put(
+        `http://localhost:3000/api/address/${id}`,
+        address
+      );
+
+      if (data?.address) {
+        setUpdated(true);
+        router.replace(`/address/${id}`);
+      }
+    } catch (error) {
+      setError(error?.response?.data?.message);
+    }
+  };
+
+  const deleteAddress = async (id) => {
+    try {
+      const { data } = await axios.delete(
+        `http://localhost:3000/api/address/${id}`
+      );
+
+      if (data?.success) {
+        router.push("/me");
+      }
+    } catch (error) {
+      setError(error?.response?.data?.message);
+    }
+  };
+
   const clearErrors = () => {
     setError(null);
   };
@@ -38,8 +83,14 @@ export const AuthProvider = ({ children }) => {
       value={{
         user,
         error,
+        updated,
+        setUpdated,
         setUser,
         registerUser,
+        addNewAddress,
+        updateAddress,
+        deleteAddress,
+
         clearErrors,
       }}
     >

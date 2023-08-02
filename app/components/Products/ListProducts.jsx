@@ -20,11 +20,11 @@ export default function ListProducts({ data }) {
               <div className="flex gap-2 justify-center items-center">
                 <i
                   onClick={() => setGrid(true)}
-                  class="fa-solid fa-table-cells-large text-2xl hover:text-primary hover:bg-gray-200 p-2 cursor-pointer rounded-lg"
+                  class="fa-solid fa-table-cells-large text-2xl hover:text-primary hover:bg-gray-200 p-2 cursor-pointer rounded-lg border"
                 ></i>
                 <i
                   onClick={() => setGrid(false)}
-                  class="fa-solid fa-list text-2xl hover:text-primary hover:bg-gray-200 p-2 cursor-pointer rounded-lg"
+                  class="fa-solid fa-list text-2xl hover:text-primary hover:bg-gray-200 p-2 cursor-pointer rounded-lg border"
                 ></i>
               </div>
             </div>

@@ -1,7 +1,7 @@
 import "express";
 import { NextResponse } from "next/server";
 import dbConnect from "../../../../backend/config/dbConnect";
-import Product from "../../../../backend/models/product";
+import Address from "../../../../backend/models/address";
 
 export async function GET(req, res) {
   try {
@@ -14,18 +14,18 @@ export async function GET(req, res) {
       });
     }
 
-    const product = await Product.findById(id);
+    const address = await Address.findById(id);
 
-    if (!product) {
+    if (!address) {
       res.status(404).json({
-        error: "Product not found.",
+        error: "address not found.",
       });
     }
 
     return NextResponse.json(
       {
-        message: "Product got successfully!",
-        product,
+        message: "address got successfully!",
+        address,
       },
       {
         status: 201,
@@ -35,7 +35,7 @@ export async function GET(req, res) {
     console.log(error);
     return NextResponse.json(
       {
-        message: "Error finding product",
+        message: "Error finding address",
         error: error.message,
       },
       {

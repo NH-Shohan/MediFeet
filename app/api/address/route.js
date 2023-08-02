@@ -1,50 +1,19 @@
+import "express";
 import { NextResponse } from "next/server";
 import dbConnect from "../../../backend/config/dbConnect";
-import User from "../../../backend/models/user";
+import Address from "../../../backend/models/address";
 
 export async function POST(req) {
   try {
-    await dbConnect();
-
     const body = await req.json();
-    const { name, email, password } = body;
-    const user = await User.create({
-      name,
-      email,
-      password,
-    });
-    user.save();
-    return NextResponse.json(
-      {
-        message: "Product created successfully!",
-        user,
-      },
-      {
-        status: 201,
-      }
-    );
-  } catch (error) {
-    return NextResponse.json(
-      {
-        message: "Error creating product",
-        error: error.message,
-      },
-      {
-        status: 500,
-      }
-    );
-  }
-}
-
-export async function GET(req) {
-  try {
     await dbConnect();
 
-    const user = await User.find();
+    const address = await Address.create(body);
+    address.save();
     return NextResponse.json(
       {
-        message: "user created successfully!",
-        user,
+        message: "address created successfully!",
+        address,
       },
       {
         status: 201,
@@ -54,7 +23,36 @@ export async function GET(req) {
     console.log(error);
     return NextResponse.json(
       {
-        message: "Error creating user",
+        message: "Error creating address",
+        error: error.message,
+      },
+      {
+        status: 500,
+      }
+    );
+  }
+}
+
+// Find address
+export async function GET(req) {
+  try {
+    await dbConnect();
+
+    const address = await Address.find();
+    return NextResponse.json(
+      {
+        message: "address created successfully!",
+        address,
+      },
+      {
+        status: 201,
+      }
+    );
+  } catch (error) {
+    console.log(error);
+    return NextResponse.json(
+      {
+        message: "Error creating address",
         error: error.message,
       },
       {

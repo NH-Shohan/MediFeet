@@ -1,44 +1,40 @@
 "use client";
 
-// import UserAddresses from "../user/UserAddresses";
-import { useSession } from "next-auth/react";
 import Image from "next/image";
 import Link from "next/link";
+import { useContext } from "react";
+import AuthContext from "../../context/AuthContext";
+import UserAddresses from "../User/UserAddresses";
 
-const Profile = () => {
-  const { data } = useSession();
-  // const { user } = useContext(AuthContext);
-  console.log(data);
+const Profile = ({ addresses }) => {
+  const { user } = useContext(AuthContext);
 
   return (
     <>
       <figure className="flex items-start sm:items-center">
         <div className="relative">
           <Image
-            className="w-16 h-16 rounded-full mr-4"
-            src={
-              data?.user?.avatar
-                ? data?.user?.avatar?.url
-                : "/default_profile.jpg"
-            }
-            alt={data?.user?.name}
+            className="w-16 h-16 rounded-full mr-4 border-secondary border-2"
+            src={user?.avatar ? user?.avatar?.url : "/default_image.jpg"}
+            alt={user?.name}
             width={20}
             height={20}
           />
         </div>
         <figcaption>
-          <h5 className="font-semibold text-lg">{data?.user?.name}</h5>
+          <h5 className="font-semibold text-lg">{user?.name}</h5>
           <p>
-            <b>Email:</b> {data?.user?.email}
-            {/* | <b>Joined On:</b>
-            {data?.user?.createdAt} */}
+            <b>Email:</b> {user?.email}
+            <br />
+            <b>Joined On: </b>
+            {user?.createdAt.substring(0, 10)}
           </p>
         </figcaption>
       </figure>
 
       <hr className="my-4" />
 
-      {/* <UserAddresses /> */}
+      <UserAddresses addresses={addresses} />
 
       <Link href="/address/new">
         <button className="px-4 py-2 inline-block text-blue-600 border border-gray-300 rounded-md hover:bg-gray-100">
