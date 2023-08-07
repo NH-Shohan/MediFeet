@@ -1,12 +1,12 @@
 "use client";
 
-import HeroSection from "@/components/Hero/Hero";
-import MallAddress from "@/components/MallAddress/MallAddress";
-import NearestOutlet from "@/components/NearestOutlet/NearestOutlet";
-import PhoneMail from "@/components/PhoneMail/PhoneMail";
-import Review from "@/components/Review/Review";
 import InnovativeTechnologies from "@/components/Technologies/Technologies";
-import TopSelection from "@/components/TopSelection/TopSelection";
+import HeroSection from "@/components/layouts/Hero";
+import MallAddress from "@/components/layouts/MallAddress";
+import NearestOutlet from "@/components/layouts/NearestOutlet";
+import PhoneMail from "@/components/layouts/PhoneMail";
+import Review from "@/components/layouts/Review";
+import TopSelection from "@/components/layouts/TopSelection";
 
 export default function Home() {
   return (

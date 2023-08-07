@@ -4,7 +4,7 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 import { Autoplay, Keyboard, Navigation } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Button } from "../Button/Button";
+import { Button } from "../layouts/Button";
 
 export default function InnovativeTechnologies() {
   return (

@@ -1,4 +1,4 @@
-import NewAddress from "../@/components/User/NewAddress";
+import NewAddress from "@/components/User/NewAddress";
 
 const NewAddressPage = () => {
   return <NewAddress />;

@@ -1,5 +1,5 @@
+import UpdateAddress from "@/components/User/UpdateAddress";
 import axios from "axios";
-import UpdateAddress from "../@/components/User/UpdateAddress";
 
 const getAddress = async (id) => {
   const { data } = await axios.get(`${process.env.API_URL}/api/address/${id}`);

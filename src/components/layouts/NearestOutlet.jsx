@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { Button } from "../Button/Button";
+import { Button } from "./Button";
 
 export default function NearestOutlet() {
   return (

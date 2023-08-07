@@ -1,5 +1,5 @@
 "use client";
-import { Button } from "@/components/Button/Button";
+import { Button } from "@/components/layouts/Button";
 import Image from "next/image";
 import "swiper/css";
 import "swiper/css/navigation";

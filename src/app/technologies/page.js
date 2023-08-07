@@ -16,9 +16,9 @@ export default function Technologies() {
           <path
             d="M20 14L30 24L20 34"
             stroke="#231F20"
-            stroke-width="4"
-            stroke-linecap="round"
-            stroke-linejoin="round"
+            strokeWidth="4"
+            strokeLinecap="round"
+            strokeLinejoin="round"
           />
         </svg>
         <p className="text-xl font-bold text-secondary uppercase">

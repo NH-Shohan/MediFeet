@@ -1,5 +1,5 @@
-import NearestOutlet from "@/components/NearestOutlet/NearestOutlet";
-import PhoneMail from "@/components/PhoneMail/PhoneMail";
+import NearestOutlet from "@/components/layouts/NearestOutlet";
+import PhoneMail from "@/components/layouts/PhoneMail";
 
 export default function page() {
   return (

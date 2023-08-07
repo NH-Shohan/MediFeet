@@ -25,11 +25,13 @@ export const AuthProvider = ({ children }) => {
         router.push("/");
       }
     } catch (error) {
-      setError(error?.response?.data?.message);
+      setError(error?.message);
     }
   };
 
-  const addNewAddress = async (address) => {
+  // Address ADD NEW Section ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  const addNewAddress = async ({ address }) => {
+    console.log(address);
     try {
       const { data } = await axios.post(
         `http://localhost:3000/api/address`,
@@ -40,37 +42,42 @@ export const AuthProvider = ({ children }) => {
         router.push("/me");
       }
     } catch (error) {
-      setError(error?.response?.data?.message);
+      setError(error?.message);
     }
   };
 
-  const updateAddress = async (id, address) => {
+  // Address UPDATE Section ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  const updateTheAddress = async (id, address) => {
+    console.log(id, address);
     try {
       const { data } = await axios.put(
         `http://localhost:3000/api/address/${id}`,
         address
       );
+      console.log(data);
 
       if (data?.address) {
         setUpdated(true);
-        router.replace(`/address/${id}`);
+        router.push(`/address`);
       }
     } catch (error) {
-      setError(error?.response?.data?.message);
+      console.log(error);
+      setError(error?.message);
     }
   };
 
+  // Address DELETE Section ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
   const deleteAddress = async (id) => {
     try {
       const { data } = await axios.delete(
         `http://localhost:3000/api/address/${id}`
       );
-
+      console.log(data);
       if (data?.success) {
         router.push("/me");
       }
     } catch (error) {
-      setError(error?.response?.data?.message);
+      setError(error?.message);
     }
   };
 
@@ -88,7 +95,7 @@ export const AuthProvider = ({ children }) => {
         setUser,
         registerUser,
         addNewAddress,
-        updateAddress,
+        updateTheAddress,
         deleteAddress,
 
         clearErrors,

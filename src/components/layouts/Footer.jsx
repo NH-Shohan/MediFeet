@@ -1,5 +1,10 @@
 import Image from "next/image";
 import Link from "next/link";
+import facebookIcon from "../../../public/facebook.svg";
+import googleIcon from "../../../public/google.svg";
+import instagramIcon from "../../../public/instagram.svg";
+import logo from "../../../public/logo.png";
+import whatsappIcon from "../../../public/whatsapp.svg";
 
 export default function Footer() {
   return (
@@ -8,44 +13,31 @@ export default function Footer() {
         <div className="md:w-[300px] sm:mx-auto md:mx-0">
           <Link href="/">
             <div className="sm:w-fit sm:mx-auto md:mx-0">
-              <Image src="/logo.png" alt="Logo" width="200" height="65" />
+              <Image src={logo} alt="Logo" width="200" height="65" />
             </div>
           </Link>
           <div className="my-6 flex sm:w-fit sm:mx-auto md:mx-0">
             <Link href={"#"}>
               <Image
                 className="mr-5"
-                src={"/facebook.svg"}
+                src={facebookIcon}
                 alt="Logo"
-                width={"30"}
-                height={"100"}
+                width={30}
               />
             </Link>
             <Link href={"#"}>
               <Image
                 className="mr-5"
-                src={"/instagram.svg"}
+                src={instagramIcon}
                 alt="Logo"
-                width={"30"}
-                height={"100"}
+                width={30}
               />
             </Link>
             <Link href={"#"}>
-              <Image
-                className="mr-5"
-                src={"/google.svg"}
-                alt="Logo"
-                width={"30"}
-                height={"100"}
-              />
+              <Image className="mr-5" src={googleIcon} alt="Logo" width={30} />
             </Link>
             <Link href={"#"}>
-              <Image
-                src={"/whatsapp.svg"}
-                alt="Logo"
-                width={"30"}
-                height={"100"}
-              />
+              <Image src={whatsappIcon} alt="Logo" width={30} />
             </Link>
           </div>
           <b>MEDIFEET Footwear Limited 13,</b>

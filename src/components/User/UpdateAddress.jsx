@@ -11,7 +11,7 @@ const UpdateAddress = ({ id, address }) => {
     error,
     updated,
     setUpdated,
-    updateAddress,
+    updateTheAddress,
     deleteAddress,
     clearErrors,
   } = useContext(AuthContext);
@@ -27,7 +27,7 @@ const UpdateAddress = ({ id, address }) => {
 
   useEffect(() => {
     if (updated) {
-      toast.success("Address Updated");
+      toast.success("Address Updated!!!");
       setUpdated(false);
     }
 
@@ -37,7 +37,7 @@ const UpdateAddress = ({ id, address }) => {
     }
   }, [error, updated, clearErrors, setUpdated]);
 
-  const submitHandler = (e) => {
+  const updateHandler = (e) => {
     e.preventDefault();
 
     const newAddress = {
@@ -48,12 +48,11 @@ const UpdateAddress = ({ id, address }) => {
       phoneNo,
       country,
     };
-    console.log(newAddress);
-
-    updateAddress(id, newAddress);
+    updateTheAddress(id, newAddress);
   };
 
-  const deleteHandler = () => {
+  const deleteHandler = (e) => {
+    e.preventDefault();
     deleteAddress(id);
   };
 
@@ -66,9 +65,9 @@ const UpdateAddress = ({ id, address }) => {
             <main className="md:w-2/3 lg:w-3/4 px-4">
               <div
                 style={{ maxWidth: "480px" }}
-                className="mt-1 mb-20 p-4 md:p-7 mx-auto rounded bg-white shadow-lg"
+                className="mt-1 mb-20 p-4 md:p-7 mx-auto rounded-2xl bg-white shadow"
               >
-                <form onSubmit={submitHandler}>
+                <form>
                   <h2 className="mb-5 text-2xl font-semibold">
                     Update Address
                   </h2>
@@ -149,14 +148,13 @@ const UpdateAddress = ({ id, address }) => {
 
                   <div className="grid md:grid-cols-2 gap-x-3">
                     <button
-                      type="submit"
                       className="my-2 px-4 py-2 text-center w-full inline-block text-white bg-blue-600 border border-transparent rounded-md hover:bg-blue-700"
+                      onClick={updateHandler}
                     >
                       Update
                     </button>
 
                     <button
-                      type="submit"
                       className="my-2 px-4 py-2 text-center w-full inline-block text-white bg-red-600 border border-transparent rounded-md hover:bg-red-700"
                       onClick={deleteHandler}
                     >

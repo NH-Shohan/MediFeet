@@ -1,4 +1,4 @@
-import Filter from "@/components/Filter/Filter";
+import Filter from "@/components/layouts/Filter";
 import ProductCard from "@/components/ProductCard/ProductCard";
 
 export default function Accessories() {
@@ -16,9 +16,9 @@ export default function Accessories() {
           <path
             d="M20 14L30 24L20 34"
             stroke="#231F20"
-            stroke-width="4"
-            stroke-linecap="round"
-            stroke-linejoin="round"
+            strokeWidth="4"
+            strokeLinecap="round"
+            strokeLinejoin="round"
           />
         </svg>
         <p className="text-2xl font-bold text-secondary uppercase">

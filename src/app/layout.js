@@ -1,6 +1,6 @@
-import Footer from "@/components/Footer/Footer";
-import { Header } from "@/components/Header/Header";
-import { Navbar } from "@/components/Navbar/Navbar";
+import Footer from "@/components/layouts/Footer";
+import { Header } from "@/components/layouts/Header";
+import { Navbar } from "@/components/layouts/Navbar";
 import { Roboto } from "next/font/google";
 import Script from "next/script";
 import { GlobalProvider } from "./GlobalProvider";
@@ -33,10 +33,7 @@ export default function RootLayout({ children }) {
           <Footer />
 
           <Script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.7.0/flowbite.min.js" />
-          <Script
-            src="https://kit.fontawesome.com/4bd420869f.js"
-            crossorigin="anonymous"
-          />
+          <Script src="https://kit.fontawesome.com/4bd420869f.js" />
         </GlobalProvider>
       </body>
     </html>

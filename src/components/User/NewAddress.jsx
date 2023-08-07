@@ -43,7 +43,7 @@ const NewAddress = () => {
             <main className="md:w-2/3 lg:w-3/4 px-4">
               <div
                 style={{ maxWidth: "480px" }}
-                className="mt-1 mb-20 p-4 md:p-7 mx-auto rounded bg-white shadow-lg"
+                className="mt-1 mb-20 p-4 md:p-7 mx-auto rounded-2xl bg-white shadow"
               >
                 <form onSubmit={submitHandler}>
                   <h2 className="mb-5 text-2xl font-semibold">
