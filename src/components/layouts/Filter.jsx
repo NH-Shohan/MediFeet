@@ -2,7 +2,7 @@ export default function Filter({ className }) {
   return (
     <div className={className}>
       <div>
-        <label class="block mb-2 text-lg font-bold text-gray-900 dark:text-text">
+        <label className="block mb-2 text-lg font-bold text-gray-900 dark:text-text">
           PRICE
         </label>
         <input
@@ -16,7 +16,7 @@ export default function Filter({ className }) {
       </div>
 
       <div className="mt-5">
-        <p class="block mb-2 text-lg font-bold text-gray-900 dark:text-text uppercase">
+        <p className="block mb-2 text-lg font-bold text-gray-900 dark:text-text uppercase">
           Color
         </p>
         <div className="flex gap-4 flex-wrap">
@@ -36,7 +36,7 @@ export default function Filter({ className }) {
       </div>
 
       <div className="mt-5">
-        <p class="block mb-2 text-lg font-bold text-gray-900 dark:text-text uppercase">
+        <p className="block mb-2 text-lg font-bold text-gray-900 dark:text-text uppercase">
           Recomended for
         </p>
 

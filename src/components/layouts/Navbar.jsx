@@ -3,8 +3,8 @@ import { useSession } from "next-auth/react";
 import Image from "next/image";
 import Link from "next/link";
 import { useContext, useEffect, useState } from "react";
-import AuthContext from "../../app/context/AuthContext";
-import CartContext from "../../app/context/CartContext";
+import AuthContext from "../../context/AuthContext";
+import CartContext from "../../context/CartContext";
 
 export const Navbar = () => {
   const { user, setUser } = useContext(AuthContext);

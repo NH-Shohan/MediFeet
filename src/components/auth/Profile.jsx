@@ -3,7 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useContext } from "react";
-import AuthContext from "../../app/context/AuthContext";
+import AuthContext from "../../context/AuthContext";
 import UserAddresses from "../User/UserAddresses";
 
 const Profile = ({ addresses }) => {

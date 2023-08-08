@@ -3,7 +3,7 @@
 import { countries } from "countries-list";
 import { useContext, useEffect, useState } from "react";
 import { toast } from "react-toastify";
-import AuthContext from "../../app/context/AuthContext";
+import AuthContext from "../../context/AuthContext";
 import Sidebar from "../layouts/Sidebar";
 
 const UpdateAddress = ({ id, address }) => {
@@ -40,7 +40,7 @@ const UpdateAddress = ({ id, address }) => {
   const updateHandler = (e) => {
     e.preventDefault();
 
-    const newAddress = {
+    const newUpdateAddress = {
       street,
       city,
       state,
@@ -48,7 +48,7 @@ const UpdateAddress = ({ id, address }) => {
       phoneNo,
       country,
     };
-    updateTheAddress(id, newAddress);
+    updateTheAddress(id, newUpdateAddress);
   };
 
   const deleteHandler = (e) => {

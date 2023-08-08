@@ -1,12 +1,12 @@
 "use client";
 
+import { parseCallbackUrl } from "@/helpers/helpers";
 import { signIn } from "next-auth/react";
 import Link from "next/link";
 import { useRouter, useSearchParams } from "next/navigation";
 import { useState } from "react";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import { parseCallbackUrl } from "../../helpers/helpers";
 
 const Login = () => {
   const [email, setEmail] = useState("");

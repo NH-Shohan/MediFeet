@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { useContext, useEffect, useState } from "react";
 import { toast } from "react-toastify";
-import AuthContext from "../../app/context/AuthContext";
+import AuthContext from "../../context/AuthContext";
 
 const Register = () => {
   const { error, registerUser, clearErrors } = useContext(AuthContext);

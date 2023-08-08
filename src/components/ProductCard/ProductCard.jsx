@@ -12,12 +12,12 @@ export default async function ProductCard({ className }) {
             <button
               id="dropdownDefaultButton"
               data-dropdown-toggle="dropdown"
-              class="text-text border focus:outline-none rounded-lg font-bold px-5 py-1.5 text-center inline-flex items-center "
+              className="text-text border focus:outline-none rounded-lg font-bold px-5 py-1.5 text-center inline-flex items-center "
               type="button"
             >
               Featured
               <svg
-                class="w-2.5 h-2.5 ml-2.5"
+                className="w-2.5 h-2.5 ml-2.5"
                 aria-hidden="true"
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
@@ -34,29 +34,29 @@ export default async function ProductCard({ className }) {
             </button>
             <div
               id="dropdown"
-              class="z-10 hidden bg-white divide-gray-100 rounded-lg shadow w-44"
+              className="z-10 hidden bg-white divide-gray-100 rounded-lg shadow w-44"
             >
               <ul
-                class="py-2 text-sm text-gray-700"
+                className="py-2 text-sm text-gray-700"
                 aria-labelledby="dropdownDefaultButton"
               >
                 <li>
-                  <a href="#" class="block px-4 py-2 hover:bg-gray-100 ">
+                  <a href="#" className="block px-4 py-2 hover:bg-gray-100 ">
                     Dashboard
                   </a>
                 </li>
                 <li>
-                  <a href="#" class="block px-4 py-2 hover:bg-gray-100 ">
+                  <a href="#" className="block px-4 py-2 hover:bg-gray-100 ">
                     Settings
                   </a>
                 </li>
                 <li>
-                  <a href="#" class="block px-4 py-2 hover:bg-gray-100 ">
+                  <a href="#" className="block px-4 py-2 hover:bg-gray-100 ">
                     Earnings
                   </a>
                 </li>
                 <li>
-                  <a href="#" class="block px-4 py-2 hover:bg-gray-100 ">
+                  <a href="#" className="block px-4 py-2 hover:bg-gray-100 ">
                     Sign out
                   </a>
                 </li>

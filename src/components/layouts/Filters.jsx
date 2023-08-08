@@ -1,6 +1,6 @@
 "use client";
 
-import { getPriceQueryParams } from "@/app/helpers/helpers";
+import { getPriceQueryParams } from "@/helpers/helpers";
 import { Rating } from "@smastrom/react-rating";
 import "@smastrom/react-rating/style.css";
 import { useRouter } from "next/navigation";

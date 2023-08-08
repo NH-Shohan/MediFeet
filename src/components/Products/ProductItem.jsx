@@ -5,7 +5,7 @@ import "@smastrom/react-rating/style.css";
 import Image from "next/image";
 import Link from "next/link";
 import { useContext } from "react";
-import CartContext from "../../app/context/CartContext";
+import CartContext from "../../context/CartContext";
 import { Button } from "../layouts/Button";
 
 const ProductItem = ({ product }) => {

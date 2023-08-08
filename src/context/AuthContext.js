@@ -30,8 +30,7 @@ export const AuthProvider = ({ children }) => {
   };
 
   // Address ADD NEW Section ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-  const addNewAddress = async ({ address }) => {
-    console.log(address);
+  const addNewAddress = async (address) => {
     try {
       const { data } = await axios.post(
         `http://localhost:3000/api/address`,
@@ -48,21 +47,17 @@ export const AuthProvider = ({ children }) => {
 
   // Address UPDATE Section ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
   const updateTheAddress = async (id, address) => {
-    console.log(id, address);
+    console.log(address);
     try {
       const { data } = await axios.put(
         `http://localhost:3000/api/address/${id}`,
         address
       );
-      console.log(data);
-
-      if (data?.address) {
-        setUpdated(true);
-        router.push(`/address`);
+      if (data) {
+        router.push("/me");
       }
     } catch (error) {
-      console.log(error);
-      setError(error?.message);
+      setError(error);
     }
   };
 
@@ -73,7 +68,7 @@ export const AuthProvider = ({ children }) => {
         `http://localhost:3000/api/address/${id}`
       );
       console.log(data);
-      if (data?.success) {
+      if (data) {
         router.push("/me");
       }
     } catch (error) {

@@ -4,7 +4,7 @@ import { Rating } from "@smastrom/react-rating";
 import "@smastrom/react-rating/style.css";
 import Image from "next/image";
 import { useContext, useRef } from "react";
-import CartContext from "../../app/context/CartContext";
+import CartContext from "../../context/CartContext";
 
 const ProductDetails = ({ product }) => {
   const { addItemToCart } = useContext(CartContext);

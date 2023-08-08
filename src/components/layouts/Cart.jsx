@@ -4,7 +4,7 @@ import { useContext } from "react";
 
 import Image from "next/image";
 import Link from "next/link";
-import CartContext from "../../app/context/CartContext";
+import CartContext from "../../context/CartContext";
 
 const Cart = () => {
   const { addItemToCart, deleteItemFromCart, cart } = useContext(CartContext);
