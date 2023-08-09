@@ -1,10 +1,10 @@
 import Image from "next/image";
 import Link from "next/link";
-import facebookIcon from "../../../public/facebook.svg";
-import googleIcon from "../../../public/google.svg";
-import instagramIcon from "../../../public/instagram.svg";
-import logo from "../../../public/logo.png";
-import whatsappIcon from "../../../public/whatsapp.svg";
+import facebookIcon from "../../../public/assets/facebook.svg";
+import googleIcon from "../../../public/assets/google.svg";
+import instagramIcon from "../../../public/assets/instagram.svg";
+import logo from "../../../public/assets/logo.png";
+import whatsappIcon from "../../../public/assets/whatsapp.svg";
 
 export default function Footer() {
   return (

@@ -6,8 +6,8 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 import { Autoplay, Keyboard, Navigation, Pagination } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
-import about2 from "../../../public/about2.png";
-import shoe from "../../../public/shoe.png";
+import about2 from "../../../public/assets/about2.png";
+import shoe from "../../../public/assets/shoe.png";
 
 export default function page() {
   return (

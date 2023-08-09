@@ -8,6 +8,8 @@ export async function POST(req) {
     const body = await req.json();
     await dbConnect();
 
+    // req.body.user = req.user._id;
+
     const address = await Address.create(body);
     address.save();
     return NextResponse.json(

@@ -6,7 +6,7 @@ module.exports = {
     "./components/**/*.{js,ts,jsx,tsx,mdx}",
     "./node_modules/flowbite-react/**/*.js",
     "./pages/**/*.{ts,tsx}",
-    "./public/**/*.html",
+    "./public/assets/**/*.html",
 
     // Or if using `src` directory:
     "./src/**/*.{js,ts,jsx,tsx,mdx}",
@@ -31,7 +31,5 @@ module.exports = {
       // => @media (min-width: 1440px) { ... }
     },
   },
-  plugins: [
-    require('flowbite/plugin')
-  ],
+  plugins: [require("flowbite/plugin")],
 };

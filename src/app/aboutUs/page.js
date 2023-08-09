@@ -1,8 +1,8 @@
 import { Button } from "@/components/layouts/Button";
 import Image from "next/image";
-import about1 from "../../../public/about1.png";
-import about2 from "../../../public/about2.png";
-import shoe from "../../../public/shoe.png";
+import about1 from "../../../public/assets/about1.png";
+import about2 from "../../../public/assets/about2.png";
+import shoe from "../../../public/assets/shoe.png";
 
 export default function page() {
   return (
