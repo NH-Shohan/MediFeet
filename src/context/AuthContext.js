@@ -10,6 +10,7 @@ export const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
   const [error, setError] = useState(null);
   const [updated, setUpdated] = useState(false);
+  const [loading, setLoading] = useState(null);
 
   const router = useRouter();
 
@@ -29,7 +30,43 @@ export const AuthProvider = ({ children }) => {
     }
   };
 
+  // const loadUser = async () => {
+  //   try {
+  //     const { data } = await axios.get("/api/auth/session?update");
+
+  //     if (data?.user) {
+  //       setUser(data.user);
+  //       router.replace("/me");
+  //     }
+  //   } catch (error) {
+  //     setError(error?.message);
+  //   }
+  // };
+
+  // const updateProfile = async (formData) => {
+  //   try {
+  //     const { data } = await axios.put(
+  //       `http://localhost:3000/api/auth/me/update`,
+  //       formData,
+  //       {
+  //         headers: {
+  //           "Content-Type": "multipart/form-data",
+  //         },
+  //       }
+  //     );
+
+  //     if (data?.user) {
+  //       loadUser();
+  //       // setLoading(false);
+  //     }
+  //   } catch (error) {
+  //     setLoading(false);
+  //     setError(error?.message);
+  //   }
+  // };
+
   // Address ADD NEW Section ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
   const addNewAddress = async (address) => {
     try {
       const { data } = await axios.post(
@@ -85,10 +122,12 @@ export const AuthProvider = ({ children }) => {
       value={{
         user,
         error,
+        loading,
         updated,
         setUpdated,
         setUser,
         registerUser,
+        // updateProfile,
         addNewAddress,
         updateTheAddress,
         deleteAddress,
